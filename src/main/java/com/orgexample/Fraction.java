@@ -9,22 +9,28 @@ public class Fraction implements Fractionable {
         this.denum = denum;
     }
 
-    @Override
-    //@Cache
-    public double doubleValue() {
-        System.out.println("invoke double value");
-        return (double) num/denum;
-    }
-
-    @Override
     @Mutator
     public void setNum(int num) {
         this.num = num;
     }
 
-    @Override
     @Mutator
     public void setDenum(int denum) {
         this.denum = denum;
+    }
+
+    @Override
+    @Cache
+    public double doubleValue() {
+        System.out.println(this.toString() + " invoke double value = " + (double) num/denum);
+        return (double) num/denum;
+    }
+
+    @Override
+    public String toString() {
+        return "Fraction{" +
+                "num=" + num +
+                ", denum=" + denum +
+                '}';
     }
 }
