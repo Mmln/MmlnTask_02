@@ -1,7 +1,7 @@
 package com.orgexample;
 
 public class Utils<T extends Fractionable>  {
-    protected T val;
+    private T val;
 
     public Utils() {
     }
@@ -19,14 +19,7 @@ public class Utils<T extends Fractionable>  {
     }
 
     public T cache(T arg){
-
-        if (this.val == null)
-            System.out.println("before this.val is null");
-        else
-            System.out.println("before " + this.val.toString());
-
         this.val = arg;
-        System.out.println("after " + this.val.toString());
         return (T)this.val;
     }
 }
