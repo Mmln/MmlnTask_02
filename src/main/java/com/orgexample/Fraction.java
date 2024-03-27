@@ -1,7 +1,5 @@
 package com.orgexample;
 
-import java.lang.reflect.Proxy;
-
 public class Fraction implements Fractionable {
     private int num;
     private int denum;
@@ -14,17 +12,19 @@ public class Fraction implements Fractionable {
     @Mutator
     public void setNum(int num) {
         this.num = num;
+        System.out.print(" " + this + " ");
     }
 
     @Mutator
     public void setDenum(int denum) {
         this.denum = denum;
+        System.out.print(" " + this + " ");
     }
 
-    @Override
     @Cache
+    @Override
     public double doubleValue() {
-        System.out.println("value calculated by doubleValue = " + String.format("%.2f",(double) num/denum) + " " + this.toString());
+        System.out.print(" " + this + " ");
         return (double) num/denum;
     }
 
